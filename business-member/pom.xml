@@ -23,5 +23,6 @@
   	<module>business-member-api</module>
   	<module>business-member-dao</module>
   	<module>business-member-service</module>
+  	<module>business-member-web</module>
   </modules>
 </project>

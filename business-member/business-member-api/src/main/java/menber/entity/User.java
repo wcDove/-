@@ -1,5 +1,6 @@
 package menber.entity;
 
+
 import cn.icloudit.common.api.enity.BaseEntity;
 import lombok.Getter;
 import lombok.Setter;

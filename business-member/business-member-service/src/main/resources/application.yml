@@ -1,57 +1,56 @@
-server:
-  port: 8762
-#  context-path: /member
 eureka:
   client:
     serviceUrl:
+      #注册中心的地址
       defaultZone: http://localhost:8761/eureka/
+server:
+  #当前服务端口号
+  port: 8762
 spring:
-  applicat
-  redis: 
-    host: 10.10.35.172
-    # password: 
+  application:
+    #当前应用名称
+    name: member
+  redis:
+    host: 10.10.35.200
+    password:
     port: 6379
-    jedis:
-      pool:
-        max-idle: 100
-        min-idle: 1
-        max-active: 1000
-        max-wait: -1
+    pool:
+      max-idle: 100
+      min-idle: 1
+      max-active: 1000
+      max-wait: -1
   #数据库连接信息
   datasource:
-        name: test
-        url: jdbc:mysql://localhost:3306/test
-        username: root
-        password: 123456
-        # 使用druid数据源
-        type: com.alibaba.druid.pool.DruidDataSource
-        driver-class-name: com.mysql.jdbc.Driver
-        filters: stat
-        maxActive: 20
-        initialSize: 1
-        maxWait: 60000
-        minIdle: 1
-        timeBetweenEvictionRunsMillis: 60000
-        minEvictableIdleTimeMillis: 300000
-        validationQuery: select 'x'
-        testWhileIdle: true
-        testOnBorrow: false
-        testOnReturn: false
-        poolPreparedStatements: true
-        maxOpenPreparedStatements: 20
+    name: test
+    url: jdbc:mysql://localhost:3306/test
+    username: root
+    password: 123456
+    #使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
   ##activemq连接信息
   activemq:
-    broker-url: tcp://10.10.35.172:61616
+    broker-url: tcp://10.10.35.200:61616
     in-memory: true
     pool:
       enabled: false
 ##队列      
 messages:
- queue: mail_queue
- 
- 
+  queue: mail_queue
+
 ribbon:
- eureka:
-  enabled: true
-  
- 
+  eureka:
+    enabled: true
